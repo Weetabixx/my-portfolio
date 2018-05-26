@@ -1,0 +1,49 @@
+/* default css */
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+#content-container {
+    padding: 5px;
+    padding-bottom: 330px;
+}
+
+
+/* 404 page css */
+input {
+    width: 56px;
+}
+
+.app {
+    width: 602px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#out_best {
+    width: 350px;
+}
+
+canvas {
+    border: 1px solid #888888;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 96px;
+}
+
+.desc {
+    font-size: small;
+}
+
+td:first-child {
+    min-width: 170px;
+}

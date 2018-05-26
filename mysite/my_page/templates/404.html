@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}<title>404 Page not found - Robin Graf</title>{% endblock %}
+
+{% block content %}
+<div class="error message">
+  <h5>error 404</h5>
+  <p>sorry, the page you are looking for could not be found</p>
+  <p>however the particles are working hard</p>
+</div>
+<div class="pso-container">
+    <div class="app">
+		<canvas id="canvaspso" width="600" height="200"></canvas>
+        <div>
+    		Controls
+    		<button id="but_start">Optimize</button>
+    		<button id="but_stop">Stop</button>
+        </div>
+        <div>
+    		Function to optimize
+    		<select id="lst_func">
+    			<option>Rastrigin (x in [-5.12,5.12])</option>
+    			<option>Easom (x in [-30,30])</option>
+    			<option>exp(-(x-5)^2)*20 + cos(x*10) (x in [-10,10])</option>
+    			<option>x^2 (x in [-5,5])</option>
+    		</select>
+        </div>
+        <div>
+    		Best so far
+    		<input id="out_best" type="text" value="" readonly="readonly">
+	    </div>
+    <p>PSO.js Algorithm by - Adrian Toncean <a href="https://github.com/adrianton3/pso.js">https://github.com/adrianton3/pso.js</a></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'mypage/javascript/pso.js' %}"></script>
+<script type="text/javascript" src="{% static 'mypage/javascript/404.js' %}"></script>
+{% endblock %}
