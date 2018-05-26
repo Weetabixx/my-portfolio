@@ -25,7 +25,7 @@ SECRET_KEY = 'jc3!b9grs05)lj2_^yiv_@)a!*)5@7&r1lf4j@qe(gz+k!0(ch'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['my-django-portfolio-weetabixx.c9users.io','www.robingraf.co.uk']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['my_page/templates','my_page/static'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +118,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'my_page/static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
