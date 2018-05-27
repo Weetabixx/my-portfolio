@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jc3!b9grs05)lj2_^yiv_@)a!*)5@7&r1lf4j@qe(gz+k!0(ch'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # make sure static files are served during production
 
 ALLOWED_HOSTS = ['my-django-portfolio-weetabixx.c9users.io','www.robingraf.co.uk']
 

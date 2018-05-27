@@ -35,5 +35,8 @@ def art(request):
     return HttpResponse(template.render())
     
 def pso(request):
-    template = loader.get_template('404.html')
+    template = loader.get_template('pso.html')
     return HttpResponse(template.render())
+    
+    
+    

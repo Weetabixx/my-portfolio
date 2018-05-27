@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'mypage/css/style.css' %}">
     {# load materialize css and tell browser site is mobile friendly #}
     <link type="text/css" rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}"  media="screen,projection"/>
+    {% block csslinks %} {% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
@@ -34,21 +35,18 @@
     {% block title %}<title>Robin Graf</title>{% endblock %}
 </head>
 <body>
-    <div>
-      {{ bannerhtml | safe }}
-    </div>
   
     {# Menu #}
     
     <ul id="dropdown0" class="dropdown-content">
-      <li><a href="#!">one</a></li>
+      <li><a href="/PSO">PSO</a></li>
       <li class="divider"></li>
       <li><a href="#!">two</a></li>
       <li class="divider"></li>
       <li><a href="#!">three</a></li>
     </ul>
     <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">one</a></li>
+      <li><a href="/PSO">PSO</a></li>
       <li class="divider"></li>
       <li><a href="#!">two</a></li>
       <li class="divider"></li>

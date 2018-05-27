@@ -20,5 +20,9 @@ import my_page.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', my_page.views.index, name='index'),
+    path('PSO/', my_page.views.pso, name='pso'),
     path('404/', my_page.views.fourOfour, name='404'),
 ]
+
+handler404 = 'my_page.views.fourOfour'
+handler500 = 'my_page.views.fourOfour'

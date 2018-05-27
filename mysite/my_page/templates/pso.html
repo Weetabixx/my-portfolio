@@ -1,0 +1,106 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}<title>Particle Swarm Optimisation - Robin Graf</title>{% endblock %}
+
+{%block csslinks %}  <link rel="stylesheet" href="{% static 'mypage/css/slider.css' %}">  {% endblock %}
+
+{% block content %}
+<div class="error message">
+  <h5>Particle Swarm Optimisation</h5>
+  <p>Have a go at using particle swarm optimisation using javascript:</p>
+</div>
+<div class="pso-container">
+    <div class="app">
+		<canvas id="canvaspso" width="600" height="200"></canvas>
+        <div>
+    		Controls
+    		<button id="but_start">Optimize</button>
+    		<button id="but_stop">Stop</button>
+        </div>
+        <div>
+    		Function to optimize
+    		<select id="lst_func">
+    			<option>Rastrigin (x in [-5.12,5.12])</option>
+    			<option>Easom (x in [-30,30])</option>
+    			<option>exp(-(x-5)^2)*20 + cos(x*10) (x in [-10,10])</option>
+    			<option>x^2 (x in [-5,5])</option>
+    		</select>
+        </div>
+        <div>
+    		Best so far
+    		<input id="out_best" type="text" value="" readonly="readonly">
+	    </div>
+	    
+	    <p>Bellow are some parameters that have different effects on how the function is optimised</p>
+	    
+	    <div>
+	        Number of iterations
+	        <slider id="slider_niter"></slider>
+					<input
+						id="inp_niter"
+						type="number"
+						min="1"
+						max="150"
+						value="50"
+						step="1"
+					>
+	    </div>
+	    <div>
+	        Population
+	        <slider id="slider_popinit"></slider>
+					<input
+						id="inp_popinit"
+						type="number"
+						min="2"
+						max="50"
+						value="10"
+						step="1"
+					>
+	    </div>
+	    <div>
+	        Inertia Weight
+	        <slider id="slider_inertia"></slider>
+					<input
+						id="inp_inertia"
+						type="number"
+						min="0"
+						max="1.2"
+						value="0.6"
+						step="0.01"
+					>
+	    </div>
+	    <div>
+	        Social Influence
+	        <slider id="slider_social"></slider>
+					<input
+						id="inp_social"
+						type="number"
+						min="0"
+						max="1.2"
+						value="0.7"
+						step="0.01"
+					>
+	    </div>
+	    <div>
+	        Personal Influence
+	        <slider id="slider_personal"></slider>
+					<input
+						id="inp_personal"
+						min="0"
+						max="1.2"
+						type="number"
+						value="0.3"
+						step="0.01"
+					>
+	    </div>
+    <p>PSO.js Algorithm by - Adrian Toncean <a href="https://github.com/adrianton3/pso.js">https://github.com/adrianton3/pso.js</a></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'mypage/javascript/slider.js' %}"></script>
+<script type="text/javascript" src="{% static 'mypage/javascript/pso.js' %}"></script>
+<script type="text/javascript" src="{% static 'mypage/javascript/simplepso.js' %}"></script>
+{% endblock %}
