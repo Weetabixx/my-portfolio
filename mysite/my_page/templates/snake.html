@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}<title>Snake - Robin Graf</title>{% endblock %}
+
+{% block content %}
+<div onkeydown="keyPress(event)">
+
+<h5 class="center-align"> Play Snake </h5>
+<div class="center-align">
+    <p>
+        I enjoy coding small games, for example: here I made snake using javascript
+    </p>
+</div>
+
+<div class="center-align">
+<canvas id="myCanvas" width="500" height="500"
+style="border:1px solid #c3c3c3;" >
+Your browser does not support the canvas element.
+</canvas>
+</div>
+<div class="center-align">
+    <p>
+        Use the arrow keys to control the snake direction
+    </p>
+</div>
+
+<script type="text/javascript" src="{% static 'mypage/javascript/snake.js' %}"></script>
+</div>
+
+{% endblock %}

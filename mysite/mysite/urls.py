@@ -19,8 +19,11 @@ import my_page.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', my_page.views.index, name='index'),
+    
     path('PSO/', my_page.views.pso, name='pso'),
+    path('about/', my_page.views.about, name='about'),
+    path('snake/', my_page.views.snake, name='snake'),
+    path('', my_page.views.index, name='index'),
     path('404/', my_page.views.fourOfour, name='404'),
 ]
 

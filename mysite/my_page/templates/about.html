@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}<title>About Me - Robin Graf</title>{% endblock %}
+
+{% block content %}
+
+<h5 class="center-align"> About Me </h5>
+<img id="profile_picture" src="{% static 'mypage/images/robin.jpg' %}" alt="picture of me">
+<div class="center-align">
+    <p>
+        I am a Computer Science Graduate who enjoys <a href="/art">painting</a> and learning about new technologies.
+        
+        Also, this Website was created by me.
+    </p>
+</div>
+
+{% endblock %}

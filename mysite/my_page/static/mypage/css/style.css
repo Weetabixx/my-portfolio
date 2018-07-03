@@ -47,3 +47,12 @@ button {
 td:first-child {
     min-width: 170px;
 }
+
+
+/* about css */
+#profile_picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+}

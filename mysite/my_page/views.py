@@ -14,12 +14,16 @@ def index(request):
     template = loader.get_template('index.html')
     return HttpResponse(template.render(context))
     
+def snake(request):
+    template = loader.get_template('snake.html')
+    return HttpResponse(template.render())
+    
 def fourOfour(request):
     template = loader.get_template('404.html')
     return HttpResponse(template.render())
     
 def about(request):
-    template = loader.get_template('404.html')
+    template = loader.get_template('about.html')
     return HttpResponse(template.render())
     
 def contact(request):
