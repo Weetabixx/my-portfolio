@@ -7,6 +7,8 @@ from django.templatetags.static import static
 from django.contrib import admin
 from django.shortcuts import redirect
 
+from .forms import PostForm
+
 from django.contrib.auth.decorators import login_required
 
 
@@ -48,8 +50,20 @@ def pso(request):
     
 @login_required(login_url='/admin/')
 def makePostPage(request):
-    template = loader.get_template('makePost.html')
-    return HttpResponse(template.render())
-    
+    if request.method != 'POST':
+        form = PostForm()
+        context = {'form' : form}
+        template = loader.get_template('makePost.html')
+        return HttpResponse(template.render(context))
+    # create a form instance and populate it with data from the request:
+    form = PostForm(request.POST)
+    # check whether it's valid:
+    if form.is_valid():
+        # process the data in form.cleaned_data as required
+        title = form.cleaned_data['post_title']
+        # ...
+        # redirect to a new URL:
+        return HttpResponseRedirect('/')
+
     
     
