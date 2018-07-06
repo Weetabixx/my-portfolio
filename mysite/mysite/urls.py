@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import my_page.views
+from django.contrib.auth import views as auth_views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,6 +26,8 @@ urlpatterns = [
     path('PSO/', my_page.views.pso, name='pso'),
     path('about/', my_page.views.about, name='about'),
     path('snake/', my_page.views.snake, name='snake'),
+    path('makePost/', my_page.views.makePostPage, name='makePost'),
+    path('accounts/login/', auth_views.LoginView.as_view()),
     path('', my_page.views.index, name='index'),
     path('404/', my_page.views.fourOfour, name='404'),
 ]

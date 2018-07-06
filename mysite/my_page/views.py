@@ -4,6 +4,10 @@ from django.template import loader
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.templatetags.static import static
+from django.contrib import admin
+from django.shortcuts import redirect
+
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -40,6 +44,11 @@ def art(request):
     
 def pso(request):
     template = loader.get_template('pso.html')
+    return HttpResponse(template.render())
+    
+@login_required(login_url='/admin/')
+def makePostPage(request):
+    template = loader.get_template('makePost.html')
     return HttpResponse(template.render())
     
     
