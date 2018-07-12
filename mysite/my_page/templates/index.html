@@ -80,6 +80,21 @@
     
     <div id="content-container">
       {% block content %}
+      
+      {% for post in posts %}
+      <div class="center-align">
+      <h3>{{post.post_title}}</h3>
+      <p>{{post.post_type}} - {{post.post_date}}</p>
+      
+      <div>
+        {{post.post_html_text | safe}}
+      </div>
+      </div>
+        
+      {% empty %}
+          <h3>Hmmm, looks empty...</h3>
+      {% endfor %}
+      
       {% endblock %}
     </div>
     

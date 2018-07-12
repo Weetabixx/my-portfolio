@@ -19,8 +19,17 @@ from .models import Post
 
 def index(request):
     imgurl = static('mypage/images/banner.jpg')
+    posts = Post.objects.order_by('post_date').reverse
+    #postTitles = []
+    #postContents = []
+    #postTypes = []
+    #for post in posts:
+    #    postTitles.append(post.post_title)
+    #    postContents.append(post.post_html_text)
+    #    postTypes.append(post.post_type)
     context = {
-        'bannerhtml':'<img src="' + imgurl + '" width="100%">'
+        'bannerhtml':'<img src="' + imgurl + '" width="100%">',
+        'posts' : posts,
     }
     template = loader.get_template('index.html')
     return HttpResponse(template.render(context))
