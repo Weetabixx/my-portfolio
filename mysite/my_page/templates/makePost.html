@@ -28,10 +28,12 @@
 <body>
     
     <a href="/admin/">Admin Area</a>
-    
+    <div>
     <form action="/makePost/" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Submit" />
+        <label for="submitThis">Submit button</label>
+        <input type="submit" value="Submit" id="submitThis"/>
     </form>
+    </div>
 </body>

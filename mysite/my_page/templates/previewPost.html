@@ -8,14 +8,16 @@
 
 <h5 class="center-align">{{ post_title}}</h5>
 <div class="center-align">
-    {{post_html_text | safe}}
+    {{post_content | safe}}
 </div>
 
 <div>
     <form action="/makePost/" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Submit" />
+        <label for="id_post_confirm"></label>
+        <label for="submitThis">Submit button</label>
+        <input type="submit" value="Submit" id="submitThis"/>
     </form>
 </div>
 
